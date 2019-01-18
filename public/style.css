@@ -23,13 +23,23 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 50px;
+  overflow-x: hidden;
   background: rgba(255,255,255,0.95);
   line-height: 1.5;
   color: #444;
 }
 
+.user-stories-inner {
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 50px;
+}
+
 .main {
+  padding: 15px;
   margin: auto;
   text-align: center;
   color: #fff;
@@ -40,10 +50,54 @@ body {
   left: 1em;
   top: 1em;
   z-index: 10;
+  padding: 0.5em 2em;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.user-stories-toggle-button.has-color {
+  border-color: #673ab7;
+  background: #fff;
+  color: #673ab7;
 }
 
 h1 {
   margin-top: 0;
   font-weight: 400;
+}
+
+.convert-field {
+  flex: 1;
+  height: 60px;
+  padding: 0.5em 1em;
+  border: none;
+  margin-right: 10px;
+  background: #fff;
+  font-size: 18px;
+}
+
+.convert-form {
+  display: flex;
+  width: 400px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.convert-button {
+  height: 60px;
+  padding: 0.5em 1em;
+  border: 3px solid #fff;
+  background: transparent;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+#result {
+  font-size: 20px;
 }
 

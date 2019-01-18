@@ -4,7 +4,7 @@
 	"//3": "updating this file will download and update your packages",
 	"name": "metricimpconverter",
 	"version": "0.0.1",
-	"description": "Converts values in metric units to values in imperial units",
+	"description": "Converts between metric units and imperial units",
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"

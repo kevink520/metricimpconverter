@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to HyperDev!</title>
+    <title>Metric/Imperial Converter</title>
     <meta name="description" content="A cool thing made with HyperDev">
     <link id="favicon" rel="icon" href="https://hyperdev.com/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
@@ -15,38 +15,40 @@
       <h1>Metric/Imperial Converter</h1>
       <div class="test-ui" id="testui">
         <form id="convertForm" class="convert-form border">
-          <input type="text" id="convertField" name="input" placeholder="3.1mi" style="width: 200px">
-          <input id="convert" type="submit" value="Convert!">
+          <input class="convert-field" type="text" id="convertField" name="input" placeholder="3.1mi" style="width: 200px">
+          <input class="convert-button" id="convert" type="submit" value="Convert!">
         </form>
         <p id="result"></p>
         <code id="jsonResult"></code>
       </div>
     </div>
     <div class="user-stories" id="userstories">
-      <h3>User Stories</h3>
-      <ol>
-        <li>I will help prevent the client from trying to guess(sniff) the MIME type.</li>
-        <li>I will prevent cross-site scripting (XSS) attacks.</li>
-        <li>I can <b>GET</b> <code>/api/convert</code> with a single parameter containing an accepted number and unit and have it converted.</li>
-        <li>Hint: Split the input by looking for the index of the first character.</li>
-        <li>I can convert 'gal' to 'L' and vice versa. <b>(1 gal to 3.78541 L)</b></li>
-        <li>I can convert 'lbs' to 'kg' and vice versa. <b>(1 lbs to 0.453592 kg)</b></li> 
-        <li>I can convert 'mi' to 'km' and vice versa. <b>(1 mi to 1.60934 km)</b></li>
-        <li>If my unit of measurement is invalid, returned will be 'invalid unit'.</li>
-        <li>If my number is invalid, returned with will 'invalid number'.</li>
-        <li>If both are invalid, return will be 'invalid number and unit'.</li>
-        <li>I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.</li>
-        <li>My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format <code>{initNum} {initial_Units} converts to {returnNum} {return_Units}</code> with the result rounded to 5 decimals.</li>
-        <li>All 16 unit tests are complete and passing.</li>
-        <li>All 5 functional tests are complete and passing.</li>
-      </ol>
-      <h3>Example usage:</h3>
-      <code>/api/convert?input=4gal</code><br>
-      <code>/api/convert?input=1/2km</code><br>
-      <code>/api/convert?input=5.4/3lbs</code><br>
-      <code>/api/convert?input=kg</code><br>
-      <h3>Example return:</h3>
-      <code>{initNum: 3.1, initUnit: 'mi', returnNum: 5.0000008, returnUnit: 'km', string: '3.1 miles converts to 5.00002 kilometers'}</code>
+      <div class="user-stories-inner">
+        <h3>User Stories</h3>
+        <ol>
+          <li>I will help prevent the client from trying to guess(sniff) the MIME type.</li>
+          <li>I will prevent cross-site scripting (XSS) attacks.</li>
+          <li>I can <b>GET</b> <code>/api/convert</code> with a single parameter containing an accepted number and unit and have it converted.</li>
+          <li>Hint: Split the input by looking for the index of the first character.</li>
+          <li>I can convert 'gal' to 'L' and vice versa. <b>(1 gal to 3.78541 L)</b></li>
+          <li>I can convert 'lbs' to 'kg' and vice versa. <b>(1 lbs to 0.453592 kg)</b></li> 
+          <li>I can convert 'mi' to 'km' and vice versa. <b>(1 mi to 1.60934 km)</b></li>
+          <li>If my unit of measurement is invalid, returned will be 'invalid unit'.</li>
+          <li>If my number is invalid, returned with will 'invalid number'.</li>
+          <li>If both are invalid, return will be 'invalid number and unit'.</li>
+          <li>I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.</li>
+          <li>My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format <code>{initNum} {initial_Units} converts to {returnNum} {return_Units}</code> with the result rounded to 5 decimals.</li>
+          <li>All 16 unit tests are complete and passing.</li>
+          <li>All 5 functional tests are complete and passing.</li>
+        </ol>
+        <h3>Example usage:</h3>
+        <code>/api/convert?input=4gal</code><br>
+        <code>/api/convert?input=1/2km</code><br>
+        <code>/api/convert?input=5.4/3lbs</code><br>
+        <code>/api/convert?input=kg</code><br>
+        <h3>Example return:</h3>
+        <code>{initNum: 3.1, initUnit: 'mi', returnNum: 5.0000008, returnUnit: 'km', string: '3.1 miles converts to 5.00002 kilometers'}</code>
+      </div>
     </div>
   </div>
     <!-- Your web-app is https, so your scripts need to be too -->
@@ -56,6 +58,14 @@
     <script>
       $(function() {
         $('.user-stories-toggle-button').on('click', function() {
+          if ($('.user-stories').is(':hidden')) {
+            $('.user-stories-toggle-button').addClass('has-color')
+              .text('Close');
+          } else {
+            $('.user-stories-toggle-button').removeClass('has-color')
+              .text('User Stories');
+          }
+
           $('.user-stories').animate({ width: 'toggle' }, 400);
         });
 
