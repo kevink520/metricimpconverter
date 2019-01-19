@@ -92,6 +92,7 @@ app.route('/api/convert')
 
     var unitMap = {
       gal: 'gallons',
+      l: 'liters',
       L: 'liters',
       lbs: 'pounds',
       kg: 'kilograms',
