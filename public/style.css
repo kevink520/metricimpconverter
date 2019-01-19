@@ -55,6 +55,7 @@ body {
   background: transparent;
   color: #fff;
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .user-stories-toggle-button.has-color {
@@ -95,6 +96,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #fff;
+  cursor: pointer;
 }
 
 #result {
