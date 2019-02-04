@@ -12,7 +12,7 @@ body {
 
 body {
   display: flex;
-  background: #673ab7;
+  background: #9f4aa1;
   font-family: sans-serif;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .user-stories-toggle-button.has-color {
-  border-color: #673ab7;
+  border-color: #9f4aa1;
   background: #fff;
   color: #673ab7;
 }
